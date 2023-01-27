@@ -6,7 +6,8 @@ export default {
   },
   methods: {
     addItem(){
-        this.addItem(this.current);
+        if(this.current !== "")
+            this.addItem(this.current);
         this.current = '';
     }
   },

@@ -25,6 +25,9 @@ export default {
         removeItem(index) {
             if (confirm("Are you sure to delete this todo item?"))
                 this.todos.splice(index, 1);
+        },
+        changeItem(index){
+            this.todos[index].state = !this.todos[index].state;
         }
     }
 }
@@ -36,7 +39,7 @@ export default {
         <TodoHeader />
         <div class="flex flex-col items-center">
             <NewTodo :addItem="addItem" />
-            <TodoList :todos="todos" :removeItem="removeItem" />
+            <TodoList :todos="todos" :removeItem="removeItem" :changeItem="changeItem" />
         </div>
     </div>
 </template>
